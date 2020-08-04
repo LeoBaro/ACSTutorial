@@ -12,7 +12,7 @@
 #include <HelloComponentS.h>
  
 //Error definitions for catching and raising exceptions
-class HelloComponentImpl : public virtual acscomponent::ACSComponentImpl, public virtual POA_workshop::HelloComponent {
+class HelloComponentImpl : public virtual acscomponent::ACSComponentImpl, public virtual POA_acstutorial::HelloComponent {
   public:
     HelloComponentImpl(const ACE_CString& name, maci::ContainerServices * containerServices);
     virtual ~HelloComponentImpl();

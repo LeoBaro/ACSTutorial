@@ -1,0 +1,14 @@
+#ifndef _HELLOCOMPONENT_IDL_
+#define _HELLOCOMPONENT_IDL_
+ 
+#pragma prefix "acsws"
+ 
+#include <acscomponent.idl>
+ 
+module workshop {
+    interface HelloComponent : ACS::ACSComponent {
+            string printHello();
+    };
+};
+ 
+#endif

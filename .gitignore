@@ -1,0 +1,13 @@
+# Files
+*.jar
+*.pyc
+*.so
+*.a
+*.o
+*.swp
+*.java.tpl
+
+# Folders
+INTROOT
+site-packages
+

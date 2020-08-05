@@ -1,0 +1,18 @@
+#ifndef _TELESCOPE_IDL_
+#define _TELESCOPE_IDL_
+ 
+#pragma prefix "acsws"
+ 
+#include <acscomponent.idl>
+ 
+module acstutorial {
+    interface Telescope : ACS::ACSComponent {
+        boolean getPointingStatus();
+        void setPointingStatus(in boolean pointing_status);
+        void setPosition(in float x, in float y);
+        string printPosition();
+
+    };
+};
+ 
+#endif

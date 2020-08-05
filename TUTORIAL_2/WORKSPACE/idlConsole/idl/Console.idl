@@ -1,0 +1,15 @@
+#ifndef _CONSOLE_IDL_
+#define _CONSOLE_IDL_
+ 
+#pragma prefix "acsws"
+ 
+#include <acscomponent.idl>
+ 
+module acstutorial {
+    interface Console : ACS::ACSComponent {
+            boolean isTelescopePointing();
+            void setTelescopePosition(in float x, in float y);
+    };
+};
+ 
+#endif

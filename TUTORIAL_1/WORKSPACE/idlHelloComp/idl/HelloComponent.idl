@@ -7,7 +7,7 @@
  
 module acstutorial {
     interface HelloComponent : ACS::ACSComponent {
-            string printHello();
+        string printHello();
     };
 };
  

@@ -14,37 +14,55 @@ Clone this repository in the $HOME folder (/home/almamgr) of the ACS virtual mac
 ### Tutorial 1
 Goal: create a custom simple component. C++ and Python implementations.
 
-### Tutorial 2 (work in progress)
-Goal: create a more complex custom component with a method with an input and output parameters with custom types. C++ and Python implementations.
+### Tutorial 2
+Goal: create two custom components A and B: the first component A calls a method of the B component. C++ and Python implementations.
 
 
-## How to start the ACS framework
+## How to start the tutorials
+In order to test TUTORIAL_x's components, you need to:
+* load the ACS environment and set the needed environment variable
+* compile the components' code: the instruction are written inside the TUTORIAL_x's README
+* start the ACS framework    
+* start the ACS containers
+* acquire a reference of the desidered component and call its methods
 
-In order to use the ACS system, its services and containers need to be started. There are two ways of doing that:
-* using the ACS commands from the terminal
-* starting the Command Center GUI
-In both cases the ACS environment must be loaded: you can do it using the *load_env.sh* script inside each TUTORIAL folder.
+### Starting the tutorial using the ACS command center (reccomended way)
+In order to activate the ACS environemnt, call the "load_env" script inside the TUTORIAL_x folder with:
+```bash
+`. load_env.sh`
+```
+Then you have to compile the components' code: the instruction are written inside the TUTORIAL_x's README.
+The ACS Command Center GUI can be started with:
+```bash
+acscommandcenter
+```
+The ACS framework can be started clicking on the “Start” green button. The containers can be activated using the corresponding panel, writing the container's name and choosing its programming language. In order to acquire a reference of a component and to call its methods, you can use the object explorer tool: you can find it clicking on the “Tools” tab.
 
-### Using the terminal
-The command to start the services is the following:
+
+### Starting the tutorial using the ACS command center (reccomended way)
+In order to activate the ACS environemnt, call the "load_env" script inside the TUTORIAL_x folder with:
+```bash
+`. load_env.sh`
+```
+Then you have to compile the components' code: the instruction are written inside the TUTORIAL_x's README. The ACS framework can be started with:
 ```bash
 acsStart
 ```
-Once the services are up and running, the containers can be started. There are 3 default containers inside the ACS framework, one for each supported language. They can be started with:
+Once ACS framework is up and running, the containers can be started. There are 3 default containers inside the ACS framework, one for each supported language. They can be started with (each one in a seprate terminal):
 ```bash
 acsStartContainer -cpp bilboContainer
 acsStartContainer -java frodoContainer
 acsStartContainer -py aragornContainer
 ```
-There are also two useful tools, the **object explorer tool** that allows to interact with the components, calling their methods or inspecting their state, and the **logger tool** that can be used to inspect the logging messages dumped by the framework.
-```bash
-objexp
-jlog
-```
+ In order to acquire a reference of a component and to call its methods, you can:
+ * call the python script inside the test/ folder:
+ ```bash
+ cd TUTORIAL_x
+ python test/client.py
+ ```
+ * start the *object explorer tool* with:
+ ```bash
+ objexp
+ ```
 
-### Using the Command Center GUI
-The GUI can be started with:
-```bash
-acscommandcenter
-```
-The services can be started clicking on the “Start” green button. The containers can be activated using the corresponding panel. The object explorer and logger tools can be activated clicking on the “Tools” tab.
+

@@ -76,6 +76,7 @@ The installation step will move the files within the integration area folder tha
 ## C++ implementation
 We must now create a class to implement the interface.
 ```bash
+cd WORKSPACE
 getTemplateForDirectory MODROOT_WS cppHelloComp
 cd cppHelloComp
 touch include/HelloComponentImpl.h
@@ -97,6 +98,7 @@ make clean all install
 ```
 ## Python implementation
 ```bash
+cd WORKSPACE
 getTemplateForDirectory MODROOT_WS pyHelloComp
 cd pyHelloComp
 mkdir src/acstut

@@ -7,6 +7,7 @@ cd TUTORIAL_2
 ## IDL Telescope Component
 Let's create the IDL interface for the Telescope.
 ```bash
+cd WORKSPACE
 getTemplateForDirectory MODROOT_WS idlTelescope
 cd idlTelescope
 touch idl/Telescope.idl
@@ -30,6 +31,7 @@ make clean all install
 ```
 ### C++ implementation
 ```bash
+cd WORKSPACE
 getTemplateForDirectory MODROOT_WS cppTelescope
 cd cppTelescope
 touch include/TelescopeImpl.h
@@ -53,6 +55,7 @@ make clean all install
 ```
 ### Python implementation [TODO]
 ```bash
+cd WORKSPACE
 getTemplateForDirectory MODROOT_WS pyTelescope
 cd pyTelescope
 mkdir src/acstut
@@ -98,6 +101,7 @@ make clean all install
 
 ### C++ implementation
 ```bash
+cd WORKSPACE
 getTemplateForDirectory MODROOT_WS cppConsole
 cd cppConsole
 touch include/ConsoleImpl.h
@@ -145,6 +149,7 @@ make clean all install
 ```
 ### Python implementation [TODO]
 ```bash
+cd WORKSPACE
 getTemplateForDirectory MODROOT_WS pyConsole
 cd pyConsole
 mkdir src/acstut

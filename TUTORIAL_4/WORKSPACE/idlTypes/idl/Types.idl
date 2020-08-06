@@ -1,0 +1,23 @@
+#ifndef _TYPES_IDL_
+#define _TYPES_IDL_
+ 
+#pragma prefix "acsws"
+ 
+
+module types {
+
+    // Coordinates type
+	struct Position {
+		double az;
+		double el;
+	};
+
+    // Custom type
+    typedef sequence<Position> Contour;
+
+    // Custom type
+    // typedef float Camera[1855]; 
+
+};
+ 
+#endif

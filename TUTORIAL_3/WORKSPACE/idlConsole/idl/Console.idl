@@ -22,6 +22,14 @@ module acstutorial {
         * @return current telescope position
         */
         string getTelescopePosition();
+
+        /**
+        * Store a new proposal in the database if the proposal pid does not exist yet.
+        *
+        * @param pid, ez, el, expTime.
+        * @return True if the proposal is stored, False otherwise. 
+        */
+        boolean insertProposalInDatabase(in long pid, in double ez, in double el, in long expTime);        
     };
 };
  

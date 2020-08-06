@@ -79,7 +79,7 @@ INCLUDES            = ConsoleImpl.h
 # ----------------------------
 LIBRARIES           = ConsoleImpl
 ConsoleImpl_OBJECTS = ConsoleImpl
-ConsoleImpl_LIBS    = ConsoleStubs acscomponent TelescopeStubs maci
+ConsoleImpl_LIBS    = ConsoleStubs acscomponent TelescopeStubs SimDatabaseStubs maci
 
 LIBRARIES_L     =
 

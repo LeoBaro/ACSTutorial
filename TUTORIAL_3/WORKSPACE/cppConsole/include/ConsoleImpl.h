@@ -13,6 +13,8 @@
  
 //Interface of clients for connection
 #include <TelescopeC.h>
+#include <SimDatabaseC.h>
+
 
 //Error definitions for catching and raising exceptions
 class ConsoleImpl : public virtual acscomponent::ACSComponentImpl, public virtual POA_acstutorial::Console {
@@ -21,6 +23,7 @@ class ConsoleImpl : public virtual acscomponent::ACSComponentImpl, public virtua
     virtual ~ConsoleImpl();
     char* getTelescopePosition();
     void setTelescopePosition(float x, float y);    
+    bool insertProposalInDatabase(int pid, double ez, double el, int expTime);
 };
  
 #endif

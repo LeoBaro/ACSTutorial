@@ -9,8 +9,20 @@ module acstutorial
 {
     interface SimDatabase : ACS::ACSComponent {
 
+        /** 
+        * Store a proposal into the database if the proposal pid does not exist yet.
+        *
+        * @param pid, ez, el, expTime.
+        * @return True if the proposal is stored, False otherwise.
+        */        
         boolean storeProposal(in long pid, in double ez, in double el, in long expTime);
 
+        /** 
+        * Count the number of proposal stored in the database.
+        *
+        * @param None
+        * @return The number of proposals.
+        */        
         long countProposals();
     
     };   

@@ -53,7 +53,7 @@ TelescopeImpl_LIBS    = TelescopeStubs acscomponent
 cd src/
 make clean all install
 ```
-### Python implementation [TODO]
+### Python implementation
 ```bash
 cd WORKSPACE
 getTemplateForDirectory MODROOT_WS pyTelescope
@@ -147,7 +147,7 @@ Since we are including the Telescope client implementation we need to link the c
 cd src/
 make clean all install
 ```
-### Python implementation [TODO]
+### Python implementation
 ```bash
 cd WORKSPACE
 getTemplateForDirectory MODROOT_WS pyConsole

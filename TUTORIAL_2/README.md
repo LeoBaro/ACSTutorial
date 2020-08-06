@@ -104,11 +104,13 @@ touch include/ConsoleImpl.h
 touch src/ConsoleImpl.cpp
 ```
 Note that include/ConsoleImpl.h must be include the Telescope client interface:
+
 **include/ConsoleImpl.h:**
 ```cpp
 #include <TelescopeC.h>
 ```
 The Console component can acquire a reference of the Telescope component using the following signature:
+
 **src/ConsoleImpl.cpp:**
 ```cpp
 acstutorial::Telescope_var telescope_component = this->getContainerServices()->getComponent<acstutorial::Telescope>("CPP_TELESCOPE");
@@ -119,6 +121,7 @@ Let's explain the signature:
 * "CPP_TELESCOPE" is the component name, defined within the MACI/Components.xml configuration
 
 The pointer must be released with:
+
 **include/ConsoleImpl.h:**
 ```cpp
 this->getContainerServices()->releaseComponent(telescope_component->name());
@@ -134,6 +137,7 @@ ConsoleImpl_LIBS    = ConsoleStubs acscomponent TelescopeStubs maci
 ...
 ```
 Since we are including the Telescope client implementation we need to link the corresponding library. In addition, since we call the "getContainerServices()" and "getComponent()" methods we need to link the "libmaci".
+
 **Compilation:**
 ```bash
 cd src/

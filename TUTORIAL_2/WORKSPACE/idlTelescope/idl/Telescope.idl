@@ -7,10 +7,21 @@
  
 module acstutorial {
     interface Telescope : ACS::ACSComponent {
-        boolean getPointingStatus();
-        void setPointingStatus(in boolean pointing_status);
-        void setPosition(in float x, in float y);
-        string printPosition();
+
+        /** 
+        * Commands the telescope to move to the given position.
+        *
+        * @param coordinates Requested telescope position
+        * @return None
+        */
+        void moveTo(in float x, in float y);
+
+        /**
+        * Get the current telescope position.
+        *
+        * @return current telescope position
+        */
+        string getCurrentPosition();
 
     };
 };

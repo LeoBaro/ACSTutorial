@@ -6,22 +6,22 @@ ConsoleImpl::ConsoleImpl(const ACE_CString& name, maci::ContainerServices * cont
 ConsoleImpl::~ConsoleImpl() {
 }
  
-bool ConsoleImpl::isTelescopePointing() {
+char* ConsoleImpl::getTelescopePosition() {
 
     acstutorial::Telescope_var telescope_component = this->getContainerServices()->getComponent<acstutorial::Telescope>("CPP_TELESCOPE");
 
-    bool p_status = telescope_component->getPointingStatus();
+    char* tel_pos = telescope_component->getCurrentPosition();
 
     this->getContainerServices()->releaseComponent(telescope_component->name());
 
-    return p_status;
+    return CORBA::string_dup(tel_pos);
 }
 
 void ConsoleImpl::setTelescopePosition(float x, float y) {
     
     acstutorial::Telescope_var telescope_component = this->getContainerServices()->getComponent<acstutorial::Telescope>("CPP_TELESCOPE");
 
-    telescope_component->setPosition(x, y);
+    telescope_component->moveTo(x, y);
 
     this->getContainerServices()->releaseComponent(telescope_component->name());
 

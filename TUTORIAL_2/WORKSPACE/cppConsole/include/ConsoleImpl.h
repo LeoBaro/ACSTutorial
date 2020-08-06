@@ -19,7 +19,7 @@ class ConsoleImpl : public virtual acscomponent::ACSComponentImpl, public virtua
   public:
     ConsoleImpl(const ACE_CString& name, maci::ContainerServices * containerServices);
     virtual ~ConsoleImpl();
-    bool isTelescopePointing();
+    char* getTelescopePosition();
     void setTelescopePosition(float x, float y);    
 };
  

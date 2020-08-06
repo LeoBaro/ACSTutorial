@@ -19,15 +19,12 @@ class TelescopeImpl : public virtual acscomponent::ACSComponentImpl, public virt
   public:
     TelescopeImpl(const ACE_CString& name, maci::ContainerServices * containerServices);
     virtual ~TelescopeImpl();
-    bool getPointingStatus();
-    void setPointingStatus(bool pointing_status);
-    void setPosition(float x, float y);
-    char* printPosition();
+    void moveTo(float x, float y);
+    char* getCurrentPosition();
 
   private:
     float x_pos;
     float y_pos;
-    bool pointing_status;
 };
  
 #endif

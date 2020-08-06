@@ -9,7 +9,7 @@ module acstutorial
 {
     interface SimDatabase : ACS::ACSComponent {
 
-        void storeProposal(in long pid, in double ez, in double el, in long expTime);
+        boolean storeProposal(in long pid, in double ez, in double el, in long expTime);
 
         long countProposals();
     

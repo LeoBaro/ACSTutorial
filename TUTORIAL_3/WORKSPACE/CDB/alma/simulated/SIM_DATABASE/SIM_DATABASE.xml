@@ -1,0 +1,27 @@
+<SimulatedComponent xmlns="urn:schemas-cosylab-com:SimulatedComponent:1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <pythonImports>
+from acstime import Duration
+import random
+    </pythonImports>
+    <initialize>
+print('SimDatabase component initialization')
+setGlobalData("pids", [])
+    </initialize>
+    <cleanUp>
+print('SimDatabase component cleaning up')
+    </cleanUp>
+    <_corbaMethod Name="storeProposal" Timeout="0">
+proposal_ids = getGlobalData("pids")
+pid = parameters[0] 
+if pid not in proposal_ids:
+    proposal_ids.append(parameters[0])
+    print("Proposal added to SimDatabase. proposal_ids:", proposal_ids)
+    setGlobalData("pids", proposal_ids)
+    return True
+else:
+    return False
+    </_corbaMethod>
+    <_corbaMethod Name="countProposals" Timeout="0">
+return len(getGlobalData("pids"))
+    </_corbaMethod>
+</SimulatedComponent>

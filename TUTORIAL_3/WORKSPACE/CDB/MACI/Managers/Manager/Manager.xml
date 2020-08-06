@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<Manager   xmlns:cdb="urn:schemas-cosylab-com:CDB:1.0" 
+           xmlns="urn:schemas-cosylab-com:Manager:1.0" 
+           xmlns:log="urn:schemas-cosylab-com:LoggingConfig:1.0"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+     Timeout="50.0"
+     ClientPingInterval="10.0"
+     ContainerPingInterval="10.0"
+     AdministratorPingInterval="10.0">
+	
+	<Startup>
+	</Startup>
+
+	<ServiceComponents>
+		<cdb:e string="AcsAlarmService" />
+		<cdb:e string="ACSLogSvc" />
+		<cdb:e string="Log" />
+		<cdb:e string="LogFactory" />
+		<cdb:e string="NotifyEventChannelFactory" />
+		<cdb:e string="MC_NotifyEventChannelFactory" />
+		<cdb:e string="LoggingNotifyEventChannelFactory" />
+		<cdb:e string="MC_LoggingNotifyEventChannelFactory" />
+		<cdb:e string="AlarmNotifyEventChannelFactory" />
+		<cdb:e string="MC_AlarmNotifyEventChannelFactory" />
+		<cdb:e string="ArchivingChannel@ARCHIVING.channels" />
+		<cdb:e string="LoggingChannel@LOGGING.channels" />
+		<cdb:e string="AlarmChannel" />
+		<cdb:e string="InterfaceRepository" />
+		<cdb:e string="CDB" />
+	</ServiceComponents>
+
+	<LoggingConfig>
+		<log:e Name="jacorb@Manager" minLogLevel="5" minLogLevelLocal="4" />
+	</LoggingConfig>
+
+</Manager>

@@ -1,0 +1,29 @@
+#ifndef _TELESCOPE_IDL_
+#define _TELESCOPE_IDL_
+ 
+#pragma prefix "acsws"
+ 
+#include <acscomponent.idl>
+ 
+module acstutorial {
+    interface Telescope : ACS::ACSComponent {
+
+        /** 
+        * Commands the telescope to move to the given position.
+        *
+        * @param coordinates Requested telescope position
+        * @return None
+        */
+        void moveTo(in float x, in float y);
+
+        /**
+        * Get the current telescope position.
+        *
+        * @return current telescope position
+        */
+        string getCurrentPosition();
+
+    };
+};
+ 
+#endif

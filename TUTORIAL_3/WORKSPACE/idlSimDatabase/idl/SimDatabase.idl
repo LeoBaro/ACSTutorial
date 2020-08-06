@@ -1,0 +1,19 @@
+#ifndef _SIM_DATABASE_IDL_
+#define _SIM_DATABASE_IDL_
+ 
+#include <acscomponent.idl>
+ 
+#pragma prefix "acsws"
+ 
+module acstutorial
+{
+    interface SimDatabase : ACS::ACSComponent {
+
+        void storeProposal(in long pid, in double ez, in double el, in long expTime);
+
+        long countProposals();
+    
+    };   
+};
+ 
+#endif

@@ -134,7 +134,7 @@ CDB_SCHEMAS =
 # IDL Files and flags
 # 
 IDL_FILES = Telescope
-TelescopeStubs_LIBS = acscomponentStubs CUSTOMErrStubs
+TelescopeStubs_LIBS = acscomponent CUSTOMErr
 TAO_IDLFLAGS =
 USER_IDL =
 #

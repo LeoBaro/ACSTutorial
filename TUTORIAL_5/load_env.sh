@@ -3,7 +3,7 @@
 
 source /alma/ACS-2020JUN/ACSSW/config/.acs/.bash_profile.acs
 
-TUTORIAL_NAME=TUTORIAL_2
+TUTORIAL_NAME=TUTORIAL_5
 
 INTROOT="/home/almamgr/INTROOT_$TUTORIAL_NAME"
 

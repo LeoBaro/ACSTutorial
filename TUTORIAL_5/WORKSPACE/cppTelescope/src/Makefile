@@ -79,7 +79,7 @@ INCLUDES            = TelescopeImpl.h
 # ----------------------------
 LIBRARIES           = TelescopeImpl
 TelescopeImpl_OBJECTS = TelescopeImpl
-TelescopeImpl_LIBS    = TelescopeStubs acscomponent
+TelescopeImpl_LIBS    = TelescopeStubs acscomponent CUSTOMErr maci
 LIBRARIES_L     =
 
 #

@@ -79,7 +79,7 @@ INCLUDES        = HelloComponentImpl.h
 # ----------------------------
 LIBRARIES = HelloComponentImpl
 HelloComponentImpl_OBJECTS = HelloComponentImpl
-HelloComponentImpl_LIBS = HelloComponentStubs CustomTypesStubs acscomponent maci
+HelloComponentImpl_LIBS = HelloComponentStubs CustomTypesStubs acscomponentStubs maci
 
 LIBRARIES_L     =
 

@@ -14,6 +14,10 @@
 //Interface of clients for connection
 #include <TelescopeC.h>
 
+#include <CUSTOMErr.h>
+
+#include <iostream>
+
 //Error definitions for catching and raising exceptions
 class ConsoleImpl : public virtual acscomponent::ACSComponentImpl, public virtual POA_acstutorial::Console {
   public:

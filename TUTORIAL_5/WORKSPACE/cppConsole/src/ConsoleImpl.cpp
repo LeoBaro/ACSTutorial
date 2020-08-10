@@ -21,7 +21,12 @@ void ConsoleImpl::setTelescopePosition(float x, float y) {
     
     acstutorial::Telescope_var telescope_component = this->getContainerServices()->getComponent<acstutorial::Telescope>("CPP_TELESCOPE");
 
-    telescope_component->moveTo(x, y);
+    try {
+        telescope_component->moveTo(x, y);
+    }
+    catch(CUSTOMErr::PositionOutOfLimitsEx &_ex) { 
+        std::cout << "====> Exception catched!!" << std::endl;
+    }
 
     this->getContainerServices()->releaseComponent(telescope_component->name());
 

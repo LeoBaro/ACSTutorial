@@ -18,7 +18,7 @@ class HelloComponentImpl : public virtual acscomponent::ACSComponentImpl, public
     HelloComponentImpl(const ACE_CString& name, maci::ContainerServices * containerServices);
     virtual ~HelloComponentImpl();
     void printHi();
-    ::CORBA::Double computeDistance(customtypes::Position & p1, customtypes::Position & p2);
+    ::CORBA::Double computeDistance(const customtypes::Position& p1, const customtypes::Position& p2);
     ::CORBA::Double computeCenterOfMass(/*customtypes::Contour c*/);
 };
  

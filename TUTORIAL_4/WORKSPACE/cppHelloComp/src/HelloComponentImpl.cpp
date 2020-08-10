@@ -10,7 +10,7 @@ void HelloComponentImpl::printHi() {
 }
 
  
-::CORBA::Double HelloComponentImpl::computeDistance(customtypes::Position & p1, customtypes::Position & p2) {
+::CORBA::Double HelloComponentImpl::computeDistance(const customtypes::Position& p1, const customtypes::Position& p2) {
     return ::CORBA::Double(10);
 }
 ::CORBA::Double HelloComponentImpl::computeCenterOfMass(/*customtypes::Contour c*/) {

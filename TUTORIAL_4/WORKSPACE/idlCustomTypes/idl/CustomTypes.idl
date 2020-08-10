@@ -1,10 +1,10 @@
-#ifndef _TYPES_IDL_
-#define _TYPES_IDL_
+#ifndef _CUSTOM_TYPES_IDL_
+#define _CUSTOM_TYPES_IDL_
  
 #pragma prefix "acsws"
  
 
-module types {
+module customtypes {
 
     // Coordinates type
 	struct Position {

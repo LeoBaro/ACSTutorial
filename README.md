@@ -12,10 +12,19 @@ Clone this repository in the $HOME folder (/home/almamgr) of the ACS virtual mac
 ## Tutorials 
 
 ### Tutorial 1
-Goal: create a custom simple component. C++ and Python implementations.
+Goal: development of a simple component. C++ and Python implementations.
 
 ### Tutorial 2
-Goal: create two custom components A and B: the first component A calls a method of the B component. C++ and Python implementations.
+Goal: development of two components A and B: the first component A calls a method of the B component. C++ and Python implementations.
+
+### Tutorial 3
+Goal: development of a component "Console" communicating with a component "Telescope" and with a "Database" **simulated** component.
+
+### Tutorial 4
+Goal: development of a component using custom types.
+
+### Tutorial 5
+Goal: development of a component that can raise custom exceptions. Another component catches the exceptions.
 
 
 ## How to start the tutorials

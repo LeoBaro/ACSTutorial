@@ -1,0 +1,31 @@
+#ifndef  _CUSTOM_ERRORS_IDL_
+#define  _CUSTOM_ERRORS_IDL_
+
+#include <acserr.idl>
+
+#pragma prefix "acsws"
+ 	
+module ACSErr 
+{
+	// type
+	const ACSErr::ACSErrType CUSTOMErr = 900907;
+}; // module ACSErr
+
+module CUSTOMErr
+{
+
+	 const ACSErr::ErrorCode PositionOutOfLimits = 0;
+	
+	// excption for type:
+	exception CUSTOMErrEx {
+		ACSErr::ErrorTrace errorTrace;	
+	};
+	
+	exception PositionOutOfLimitsEx {
+		ACSErr::ErrorTrace errorTrace;	
+	};
+	
+	
+}; // module CUSTOMErr
+
+#endif

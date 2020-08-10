@@ -1,0 +1,22 @@
+#ifndef _HELLO_COMPONENT_IDL_
+#define _HELLO_COMPONENT_IDL_
+ 
+#pragma prefix "acsws"
+ 
+#include <acscomponent.idl>
+#include <CustomTypes.idl>
+
+module acstutorial {
+    
+    interface HelloComponent : ACS::ACSComponent {
+
+        void printHi();
+
+        double computeDistance(in customtypes::Position p1, in customtypes::Position p2);
+        
+        double computeCenterOfMass(/*in customtypes::Contour c*/);
+   
+    };
+};
+
+#endif

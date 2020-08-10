@@ -133,8 +133,10 @@ CDB_SCHEMAS =
 # 
 # IDL Files and flags
 # 
-IDL_FILES = Types
-TypesStubs_LIBS = acscomponentStubs
+# We declare the name of the IDL file (the one inside the idl/ folder)
+IDL_FILES = HelloComponent 
+# Since the Makefile will generate a Stubs library, we need to link the acscomponentStubs # library. We just need to define this variabile:
+HelloComponentStubs_LIBS = acscomponentStubs CustomTypesStubs
 
 TAO_IDLFLAGS =
 USER_IDL =
@@ -156,7 +158,7 @@ XML_IDL=
 #
 # Java Component Helper Classes generation on/off
 #
-COMPONENT_HELPERS=
+COMPONENT_HELPERS=on
 #
 # Java Entity Classes generation on/off
 #

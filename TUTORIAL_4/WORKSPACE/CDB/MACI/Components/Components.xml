@@ -9,5 +9,12 @@
      Type="IDL:acsws/acstutorial/HelloComponent:1.0"
      Container="bilboContainer"
      ImplLang="cpp"/>
+
+   <e Name="PY_HELLO_COMP"
+     Code="acstut.HelloComponentImpl"
+     Type="IDL:acsws/acstutorial/HelloComponent:1.0"
+     Container="aragornContainer"
+     ImplLang="py"/>
+ 
  
 </Components>

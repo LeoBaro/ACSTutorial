@@ -12,6 +12,8 @@ module acstutorial {
 
         void printHi();
 
+        customtypes::Position getPosition();
+
         double computeDistance(in customtypes::Position p1, in customtypes::Position p2);
         
         double computeCenterOfMass(/*in customtypes::Contour c*/);

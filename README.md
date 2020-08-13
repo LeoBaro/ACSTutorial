@@ -3,7 +3,7 @@
 The goal of this repository is to provide some usage examples of the ACS framework. This repository contains several tutorials, each tutorial is inside the corresponding folder. Inside each folder there are the following elements:
 
 * load_env.sh: a script that initialize the environment. It creates an integration area (INTROOT) folder and set the needed environment variables.
-* WORKSPACE: a folder that contains the components and a custom CDB configuration.
+* WORKSPACE: a folder that contains the components and the CDB configuration.
 * README.md: a README that describes how to integrate the components inside the ACS framework.
 
 ## Installation
@@ -21,16 +21,16 @@ Goal: development of two components A and B: the first component A calls a metho
 Goal: development of a component "Console" communicating with a component "Telescope" and with a "Database" **simulated** component.
 
 ### Tutorial 4
-Goal: development of a component using custom types.
+Goal: development of user-definied complex types. 
 
 ### Tutorial 5
-Goal: development of a component that can raise custom exceptions. Another component catches the exceptions.
+Goal: development of a component that can raise user-definied exceptions. Another component catches the exceptions.
 
 
 ## How to start the tutorials
 In order to test TUTORIAL_x's components, you need to:
 1. load the ACS environment and set the needed environment variable
-2. compile the components' code: the instruction are written inside the TUTORIAL_x's README
+2. compile the components' code
 3. start the ACS framework    
 4. start the ACS containers
 5. acquire a reference of the desidered component and call its methods
@@ -40,8 +40,10 @@ In order to test TUTORIAL_x's components, you need to:
 ```bash
 `. load_env.sh`
 ```
-2. The components' code must be compiled and installed: the instructions are written inside the TUTORIAL_x's README.
-
+2. In order to compile and install the components' code, call the "make_all" script inside the TUTORIAL_x folder with:
+```bash
+`. make_all.sh`
+```
 3. The ACS Command Center GUI can be started with:
 ```bash
 acscommandcenter

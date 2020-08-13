@@ -1,0 +1,17 @@
+#ifndef _GENERIC_MODULE_IDL_
+#define _GENERIC_MODULE_IDL_
+ 
+#pragma prefix "acsws"
+ 
+#include <acscomponent.idl>
+ 
+module acstutorial {
+    interface FooComponent : ACS::ACSComponent {
+        string sayHi();
+    };
+    interface BarComponent : ACS::ACSComponent {
+        string sayHello();
+    };
+};
+ 
+#endif

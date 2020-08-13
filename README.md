@@ -26,6 +26,9 @@ Goal: development of user-definied complex types.
 ### Tutorial 5
 Goal: development of a component that can raise user-definied exceptions. Another component catches the exceptions.
 
+### Tutorial 6
+Goal: compilation of an IDL module containing multiple interface definitions.
+
 
 ## How to start the tutorials
 In order to test TUTORIAL_x's components, you need to:

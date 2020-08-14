@@ -14,7 +14,8 @@
 //Interface of clients for connection
 #include <TelescopeC.h>
 
-#include <CUSTOMErr.h>
+#include <FOOErr.h>
+#include <BARErr.h>
 
 #include <iostream>
 

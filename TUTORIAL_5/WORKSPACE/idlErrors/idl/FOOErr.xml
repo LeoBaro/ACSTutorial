@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<Type  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+       xmlns="Alma/ACSError" 
+       xsi:schemaLocation="Alma/ACSError ACSError.xsd" 
+       name="FOOErr" type="900908" _prefix="acsws">
+
+    <ErrorCode name="FooNotFound" 
+                shortDescription="Foo is not found" 
+                description="Many have looked for it but FOO has not been found"/>
+
+</Type>

@@ -24,8 +24,10 @@ void ConsoleImpl::setTelescopePosition(float x, float y) {
     try {
         telescope_component->moveTo(x, y);
     }
-    catch(CUSTOMErr::PositionOutOfLimitsEx &_ex) { 
+    catch(FOOErr::FooNotFoundEx &_ex) { 
         std::cout << "====> Exception catched!!" << std::endl;
+        throw BARErr::BarNotFoundExImpl(__FILE__, __LINE__, "moveTo(..) raises an Exception: x < 0").getBarNotFoundEx();
+
     }
 
     this->getContainerServices()->releaseComponent(telescope_component->name());

@@ -134,7 +134,7 @@ CDB_SCHEMAS =
 # IDL Files and flags
 # 
 IDL_FILES = Console
-ConsoleStubs_LIBS = acscomponentStubs
+ConsoleStubs_LIBS = acscomponentStubs BARErr
 TAO_IDLFLAGS =
 USER_IDL =
 #

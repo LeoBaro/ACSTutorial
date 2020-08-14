@@ -11,11 +11,8 @@ TelescopeImpl::~TelescopeImpl() {
 
 void TelescopeImpl::moveTo(float x, float y) {
     
-    if(x < 0) {
-        throw CUSTOMErr::PositionOutOfLimitsExImpl(__FILE__, __LINE__, "moveTo(..) raises an Exception: x < 0").getPositionOutOfLimitsEx();
-    }
-    if(y < 0) {
-        throw CUSTOMErr::PositionOutOfLimitsExImpl(__FILE__, __LINE__, "moveTo(..) raises an Exception: y < 0").getPositionOutOfLimitsEx();
+    if(x < 0 || y < 0) {
+        throw FOOErr::FooNotFoundExImpl(__FILE__, __LINE__, "moveTo(..) raises an Exception: x < 0").getFooNotFoundEx();
     }
 
     this->x_pos = x;

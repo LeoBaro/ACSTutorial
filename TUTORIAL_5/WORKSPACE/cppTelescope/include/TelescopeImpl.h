@@ -14,7 +14,7 @@
 // float -> string conversion utility
 #include <sstream>
 
-#include <CUSTOMErr.h>
+#include <FOOErr.h>
 
  
 //Error definitions for catching and raising exceptions

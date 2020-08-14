@@ -5,7 +5,7 @@
  
 #include <acscomponent.idl>
 
-#include "CUSTOMErr.idl"
+#include <FOOErr.idl>
 
 
 module acstutorial {
@@ -18,7 +18,7 @@ module acstutorial {
         * @return None
         */
         void moveTo(in float x, in float y)
-            		raises(CUSTOMErr::PositionOutOfLimitsEx);
+            		raises(FOOErr::FooNotFoundEx);
 
         /**
         * Get the current telescope position.

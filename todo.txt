@@ -1,0 +1,6 @@
+Tutorial hierarchical CDB
+https://confluence.alma.cl/pages/viewpage.action?pageId=54003123
+
+Tutorial Component Types + Lifecycle + Activation
+https://confluence.alma.cl/display/ICTACS/ACS+Workshop+-+Advanced+Component+Types
+

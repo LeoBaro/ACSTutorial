@@ -5,6 +5,9 @@
  
 #include <acscomponent.idl>
  
+#include <BARErr.idl>
+
+
 module acstutorial {
     interface Console : ACS::ACSComponent {
 
@@ -14,7 +17,8 @@ module acstutorial {
         * @param coordinates Requested telescope position
         * @return None
         */
-        void setTelescopePosition(in float x, in float y);
+        void setTelescopePosition(in float x, in float y)
+                                raises(BARErr::BarNotFoundEx);
 
         /**
         * Get the current telescope position.

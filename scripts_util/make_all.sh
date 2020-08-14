@@ -10,7 +10,6 @@ echo "
 
 Error: $error_msg  
 "
-    exit 1
 }
 
 
@@ -29,18 +28,20 @@ echo "TO_COMPILE: $TO_COMPILE"
 
 BASE="/home/almamgr/ACSTutorial/$TUTORIAL_NAME/WORKSPACE"
 
-i=0
+#i=0
 for FOLDER in $TO_COMPILE
     do
-        ((i++)) # first argument does not specify code to compile
+        #((i++)) # first argument does not specify code to compile
         #echo "FOLDER: $FOLDER i: $i"
-        if [[ "$i" == '1' ]]; then
-            continue
-        fi
+        #if [[ "$i" == '1' ]]; then
+        #    continue
+        #fi
         FOLDER_PATH="$BASE/$FOLDER/src"
         echo "FOLDER_PATH: $FOLDER_PATH"
         if [ ! -d "$FOLDER_PATH" ]; then
             quit "$FOLDER_PATH does not exist!"
+            cd "$BASE/.."
+            return
         fi
         cd $FOLDER_PATH
         echo "Compiling $FOLDER..."
@@ -49,16 +50,22 @@ for FOLDER in $TO_COMPILE
             echo "make clean succeeded"
         else
             quit "make clean failed"
+            cd "$BASE/.."
+            return
         fi
         if make all ; then
             echo "make all succeeded"
         else
             quit "make all failed"
+            cd "$BASE/.."
+            return
         fi
         if make install ; then
             echo "make install succeeded"
         else
             quit "make install failed"
+            cd "$BASE/.."
+            return
         fi
 
 

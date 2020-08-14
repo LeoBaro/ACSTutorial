@@ -1,5 +1,5 @@
-#ifndef  _CUSTOMErr_IDL_
-#define  _CUSTOMErr_IDL_
+#ifndef  _BARErr_IDL_
+#define  _BARErr_IDL_
 	
 /*******************************************************************************
 * ALMA - Atacama Large Millimiter Array
@@ -30,25 +30,25 @@
 module ACSErr 
 {
 	// type
-	const ACSErr::ACSErrType CUSTOMErr = 900907;
+	const ACSErr::ACSErrType BARErr = 900907;
 }; // module ACSErr
 
-module CUSTOMErr
+module BARErr
 {
-	 const ACSErr::ErrorCode PositionOutOfLimits = 0;
+	 const ACSErr::ErrorCode BarNotFound = 0;
 	
 	// excption for type:
-	exception CUSTOMErrEx {
+	exception BARErrEx {
 		ACSErr::ErrorTrace errorTrace;	
 	};
 	
 	// excptions for codes:
-	exception PositionOutOfLimitsEx {
+	exception BarNotFoundEx {
 		ACSErr::ErrorTrace errorTrace;	
 	};
 	
 	
-}; // module CUSTOMErr
+}; // module BARErr
 
 #endif
 

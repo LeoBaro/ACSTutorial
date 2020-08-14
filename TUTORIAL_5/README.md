@@ -11,42 +11,44 @@ Let's create the IDL interface for the Errors.
 cd WORKSPACE
 getTemplateForDirectory MODROOT_WS idlErrors
 cd idlErrors
-touch idl/CUSTOMErr.idl
+touch idl/ERRORS.idl
 ```
 Each error is is definied with two numbers:
 * ACSErr::ACSErrType -> namespace / IDL module
 * ACSErr::ErrorCode -> exception class
-Inside idl/CUSTOMErr.idl a CUSTMErr module has been defined. Its type is 900907 and it defines a new ErrorCode (=0) associated with a user-defined exception "PositionOutOfLimitsEx". 
+Inside idl/ERRORS.idl a FOOErr and BARErr modules have been defined. Their types are 900907 and 900908 and they define a new ErrorCode (=0) associated with a user-defined exception "FooNotFound" and "BarNotFound". 
 
 ### XML Errors definition
-In addition to the IDL interface, an xml description of the errors must be provided.
+In addition to the IDL interface, an xml description of the modules must be provided.
 ```bash
-touch idl/CUSTOMErr.xml
+touch idl/FOOErr.xml
+touch idl/BARErr.xml
 ```
-The "name" attribute of the "Type" tag must be equal to the new module name (e.g. CUSTOMErr) and the "type" attribute must be equal to the ACSErrType defined within the IDL (e.g. 900907). Then, each exception must be defined using the "ErrorCode" tag. 
+The "name" attribute of the "Type" tag must be equal to the new module name (e.g. FOOErr) and the "type" attribute must be equal to the ACSErrType defined within the IDL (e.g. 900907). Then, each exception must be defined using the "ErrorCode" tag. 
 
 ### Compilation:
 In order to compile the idl, you need to assign the name of the new module to the ACSERRDEF variable of the Makefile. 
 **Makefile:**
 ```makefile
 ...
-ACSERRDEF := CUSTOMErr
+ACSERRDEF := FOOErr BARErr
 ```
 ```bash
 cd src/
 make clean all install
 ```
+The compilation will generate FOOErr.idl and BARErr.idl from ERRORS.idl
 
 ## Telescope Component
 
 ### IDL definition file
-Nothing new from TUTORIAL_2, except the "CUSTOMErr.idl" is included and "moveTo" will raise an Exception.
+Nothing new from TUTORIAL_2, except the "ERRORS.idl" is included and "moveTo" will raise an Exception.
 ```bash
     ...
-    #include "CUSTOMErr.idl"
+    #include "FOOErr.idl"
     ...
     void moveTo(in float x, in float y)
-    		raises (CUSTOMErr::PositionOutOfLimitsEx);
+    		raises (FOOErr::FooNotFoundEx);
     ...
 ```
 In order to compile the idl, you need to link the library in which the errors are defined. This time **you don't specify the "STUBS" suffix**.
@@ -55,7 +57,7 @@ In order to compile the idl, you need to link the library in which the errors ar
 ```makefile
 ...
 IDL_FILES = Telescope
-TelescopeStubs_LIBS = acscomponent CUSTOMErr
+TelescopeStubs_LIBS = acscomponent FOOErr
 ...
 ```
 Then, as always:
@@ -64,13 +66,13 @@ cd src/
 make clean all install
 ```
 ### C++ implementation:
-The "TelescopeImpl.h" includes the "CUSTOMErr.h" and the "TelescopeImpl.cpp" will raise the exception:
+The "TelescopeImpl.h" includes the "FOOErr.h" and the "TelescopeImpl.cpp" will raise the exception:
 ```cpp
-throw CUSTOMErr::PositionOutOfLimitsExImpl(__FILE__, __LINE__, "Telescope cannot move here!").getPositionOutOfLimitsEx();
+throw FOOErr::FooNotFoundExImpl(__FILE__, __LINE__, "Telescope cannot move here!").getFooNotFoundEx();
 ```
 Be careful here:
-* PositionOutOfLimitsEx**Impl**: you need to specify the "Impl" suffix.
-* **get**PositionOutOfLimitsEx: you need to use tht "get" prefix.
+* FooNotFoundEx**Impl**: you need to specify the "Impl" suffix.
+* **get**FooNotFoundEx: you need to use tht "get" prefix.
 
 In order to compile the cpp implementation of the Telescope component, you need to link the library in which the errors are defined. This time **you don't specify the "STUBS" suffix**.
 
@@ -81,7 +83,7 @@ INCLUDES            = TelescopeImpl.h
 ...
 LIBRARIES           = TelescopeImpl
 TelescopeImpl_OBJECTS = TelescopeImpl
-TelescopeImpl_LIBS    = TelescopeStubs acscomponent CUSTOMErr maci
+TelescopeImpl_LIBS    = TelescopeStubs acscomponent FOOErr maci
 ...
 ```
 Then, as always:
@@ -93,13 +95,13 @@ make clean all install
 ## Console Component
 We want to make able the Console component to catch the Telescope's exception. 
 * The IDL definition does not change
-* The "ConsoleImpl.h" must include "CUSTOMErr.h"
+* The "ConsoleImpl.h" must include "BARErr.h"
 * The "ConsoleImpl.cpp" can catch the exception using this syntax:
 ```cpp
 try {
     telescope_component->moveTo(x, y);
 }
-catch(CUSTOMErr::PositionOutOfLimitsEx &_ex) { 
+catch(BARErr::BarNotFoundEx &_ex) { 
     std::cout << "====> Exception catched!!" << std::endl;
 }
 ```
@@ -112,7 +114,7 @@ INCLUDES            = ConsoleImpl.h
 ...
 LIBRARIES           = ConsoleImpl
 ConsoleImpl_OBJECTS = ConsoleImpl
-ConsoleImpl_LIBS    = ConsoleStubs acscomponent CUSTOMErr TelescopeStubs maci
+ConsoleImpl_LIBS    = ConsoleStubs acscomponent BARErr TelescopeStubs maci
 ...
 ```
 Then, as always:

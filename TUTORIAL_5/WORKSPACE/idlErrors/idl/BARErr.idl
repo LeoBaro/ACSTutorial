@@ -1,0 +1,32 @@
+#ifndef  _BARErr_IDL_
+#define  _BARErr_IDL_
+
+#include <acserr.idl>
+
+#pragma prefix "acsws"
+ 	
+module ACSErr 
+{
+	// type
+	const ACSErr::ACSErrType BARErr = 900907;
+}; // module ACSErr
+
+module BARErr
+{
+	 const ACSErr::ErrorCode BarNotFound = 0;
+	
+	// excption for type:
+	exception BARErrEx {
+		ACSErr::ErrorTrace errorTrace;	
+	};
+	
+	// excptions for codes:
+	exception BarNotFoundEx {
+		ACSErr::ErrorTrace errorTrace;	
+	};
+	
+	
+}; // module BARErr
+
+#endif
+

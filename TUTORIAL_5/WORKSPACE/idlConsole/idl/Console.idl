@@ -4,6 +4,7 @@
 #pragma prefix "acsws"
  
 #include <acscomponent.idl>
+#include "CUSTOMErr.idl"
  
 #include <BARErr.idl>
 

@@ -1,6 +1,8 @@
 import acstutorial
 import acstutorial__POA
 import acstut
+import CUSTOMErr
+import CUSTOMErrImpl
   
 from Acspy.Servants.ACSComponent import ACSComponent
 from Acspy.Servants.ContainerServices import ContainerServices
@@ -19,6 +21,9 @@ class TelescopeImpl(acstutorial__POA.Telescope, ACSComponent, ContainerServices,
         return "Hello World!"
 
     def moveTo(self, x, y):
+
+        if x < 0 or y < 0:
+            raise CUSTOMErrImpl.PositionOutOfLimitsExImpl()
         self.x = x
         self.y = y
     

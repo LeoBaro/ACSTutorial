@@ -134,7 +134,11 @@ CDB_SCHEMAS =
 # IDL Files and flags
 # 
 IDL_FILES = Console
+<<<<<<< Updated upstream
 ConsoleStubs_LIBS = acscomponentStubs BARErr
+=======
+ConsoleStubs_LIBS = acscomponentStubs CUSTOMErr
+>>>>>>> Stashed changes
 TAO_IDLFLAGS =
 USER_IDL =
 #

@@ -22,7 +22,7 @@ fi
 
 export INTROOT="$INTROOT"
 source /alma/ACS-2020JUN/ACSSW/config/.acs/.bash_profile.acs
-export ACS_CDB="~/ACSTutorial/$TUTORIAL_NAME/WORKSPACE"
+export ACS_CDB="/home/almamgr/ACSTutorial/$TUTORIAL_NAME/WORKSPACE"
 
 echo "
            ___

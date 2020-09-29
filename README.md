@@ -1,6 +1,6 @@
 # ACSTutorial
 
-The goal of this repository is to provide some usage examples of the ACS framework. This repository contains several tutorials, each tutorial is inside the corresponding folder. Inside each folder there are the following elements:
+The goal of this repository is to provide some very basic usage examples of the ACS framework. This repository contains several tutorials, each tutorial is inside the corresponding folder. Inside each folder there are the following elements:
 
 * load_env.sh: a script that initialize the environment. It creates an integration area (INTROOT) folder and set the needed environment variables.
 * WORKSPACE: a folder that contains the components and the CDB configuration.
@@ -15,7 +15,7 @@ Clone this repository in the $HOME folder (/home/almamgr) of the ACS virtual mac
 Goal: development of a simple component. C++ and Python implementations.
 
 ### Tutorial 2
-Goal: development of two components A and B: the first component A calls a method of the B component. C++ and Python implementations.
+Goal: development of two components "A" and "B": the component "A" calls a method of the "B" component. C++ and Python implementations.
 
 ### Tutorial 3
 Goal: development of a component "Console" communicating with a component "Telescope" and with a "Database" **simulated** component.
@@ -31,6 +31,10 @@ Goal: compilation of an IDL module containing multiple interface definitions.
 
 ### Tutorial 7
 Goal: the README.md gives an overview of the different components types available in ACS
+
+# Tutorial 8
+Goal: development of two components "Supplier" and "Consumer": the "Supplier" component communicates with the "Consumer" component using the ACS' notification channel.  
+
 
 ## How to start the tutorials
 In order to test TUTORIAL_x's components, you need to:

@@ -29,6 +29,8 @@ Goal: development of a component that can raise user-definied exceptions. Anothe
 ### Tutorial 6
 Goal: compilation of an IDL module containing multiple interface definitions.
 
+### Tutorial 7
+Goal: the README.md gives an overview of the different components types available in ACS
 
 ## How to start the tutorials
 In order to test TUTORIAL_x's components, you need to:

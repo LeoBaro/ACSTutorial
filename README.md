@@ -32,7 +32,7 @@ Goal: compilation of an IDL module containing multiple interface definitions.
 ### Tutorial 7
 Goal: the README.md gives an overview of the different components types available in ACS
 
-# Tutorial 8
+### Tutorial 8
 Goal: development of two components "Supplier" and "Consumer": the "Supplier" component communicates with the "Consumer" component using the ACS' notification channel.  
 
 

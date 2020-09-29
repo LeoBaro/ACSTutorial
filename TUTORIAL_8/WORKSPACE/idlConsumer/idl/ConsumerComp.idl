@@ -1,0 +1,13 @@
+#ifndef _CONSUMERCOMP_IDL_
+#define _CONSUMERCOMP_IDL_
+ 
+#pragma prefix "acstut"
+ 
+#include <acscomponent.idl>
+ 
+module acstutorial {
+    interface ConsumerComp : ACS::ACSComponent {
+    };
+};
+ 
+#endif

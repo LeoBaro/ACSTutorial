@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<Components  xmlns="urn:schemas-cosylab-com:Components:1.0"
+      xmlns:cdb="urn:schemas-cosylab-com:CDB:1.0"
+      xmlns:baci="urn:schemas-cosylab-com:BACI:1.0"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      
+     <e Name="PY_SUPPLIER"
+      Code="acstutorial.SupplierCompImpl"
+      Type="IDL:acstut/acstutorial/SupplierComp:1.0"
+      Container="aragornContainer"
+      ImplLang="py"/> 
+
+
+     <e Name="PY_CONSUMER"
+      Code="acstutorial.ConsumerCompImpl"
+      Type="IDL:acstut/acstutorial/ConsumerComp:1.0"
+      Container="aragornContainer"
+      ImplLang="py"
+      Autostart = "true"
+      /> 
+
+ 
+</Components>

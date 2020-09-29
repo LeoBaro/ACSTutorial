@@ -1,0 +1,19 @@
+#ifndef _SUPPLIERCOMP_IDL_
+#define _SUPPLIERCOMP_IDL_
+ 
+#pragma prefix "acstut"
+ 
+#include <acscomponent.idl>
+ 
+module acstutorial {
+    interface SupplierComp : ACS::ACSComponent {
+
+        /** 
+        * The SupplierComp will send one event in the notification channel.
+        */
+        void sendEvent();
+
+    };
+};
+ 
+#endif

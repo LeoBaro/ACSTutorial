@@ -1,0 +1,15 @@
+#ifndef _NCDEFINITIONS_IDL_
+#define _NCDEFINITIONS_IDL_
+ 
+#pragma prefix "acstut"
+ 
+module NC_DEFINITIONS_MODULE {
+
+    const string CHANNELNAME_EXAMPLE = "example";
+    
+    struct ExampleEvent {
+        string msg;
+        long value;
+    };
+};
+#endif

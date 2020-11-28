@@ -1,15 +1,18 @@
 # ACSTutorial
 
-The goal of this repository is to provide some very basic usage examples of the ACS framework. This repository contains several tutorials, each tutorial is inside the corresponding folder. Inside each folder there are the following elements:
+The goal of this repository is to provide some very basic usage examples of the ACS framework. This repository contains several tutorials, each tutorial has the corresponding folder. Inside each folder there are the following elements:
 
 * load_env.sh: a script that initialize the environment. It creates an integration area (INTROOT) folder and set the needed environment variables.
+* make_all.sh: a script that call all the Makefiles to compile and install the code in the corresponding INTROOT area.
 * WORKSPACE: a folder that contains the components and the CDB configuration.
-* README.md: a README that describes how to integrate the components inside the ACS framework.
+* README.md: a README explaining the tutorial.
+
+
 
 ## Installation
 Clone this repository in the $HOME folder (/home/almamgr) of the ACS virtual machine.
 
-## Tutorials 
+## Tutorials summary
 
 ### Tutorial 1
 **Goal**: development of a basic component.
@@ -25,7 +28,6 @@ Clone this repository in the $HOME folder (/home/almamgr) of the ACS virtual mac
 **Goal**: development of a component "Console" communicating with a component "Telescope" and with a "Database" **simulated** component.
 
 **Implementation**: c++, xml.
-
 
 ### Tutorial 4
 **Goal**: development of user-definied complex types. 
@@ -52,15 +54,16 @@ Clone this repository in the $HOME folder (/home/almamgr) of the ACS virtual mac
 
 **Implementation**: python
 
-
 ### Tutorial 9
 **Goal**: development of a custom Offshoot for reporting on asynchronous Call. 
 
 **Implementation**: python
 
-## Start the tutorials
 
-### Start a tutorial using the ACS command center
+
+## How to start the tutorials
+
+### How to start a tutorial using the ACS command center
 1. In order to activate the ACS environemnt, call the "load_env" script inside the TUTORIAL_x folder with:
 ```bash
 `. load_env.sh`
@@ -78,7 +81,7 @@ The ACS framework can be started clicking on the “Start” green button.
 5. In order to acquire a reference of a component and call its methods, you can use the object explorer tool: you can find it clicking on the “Tools” tab.
 
 
-### Start a tutorial using the terminal and ACS commands
+### How to start a tutorial using the terminal and ACS commands
 
 DISCLAIMER: only TUTORIAL_9 has a "test" script.
 

@@ -1,0 +1,28 @@
+#ifndef _ASYNC_MODULE_IDL_
+#define _ASYNC_MODULE_IDL_
+ 
+#pragma prefix "acsws"
+
+#include <acscomponent.idl>
+#include <acscommon.idl> // for ACS::OffShoot, also link acscommonStubs in the Makefile!!
+
+module AsyncModule
+{
+	struct CallbackInfo {
+		string status;
+		string data;
+	};
+
+    interface MyCallback : ACS::OffShoot {
+        oneway void working(in string data);
+        oneway void done(in string data);        
+        AsyncModule::CallbackInfo get(in string data);        
+
+    };
+    
+    interface AsyncExample : ACS::ACSComponent {
+        oneway void delayResultWithOutCallback(in long sleepSec);
+        oneway void delayResult(in long sleepSec, in AsyncModule::MyCallback cb);
+    };
+};
+#endif

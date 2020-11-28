@@ -16,7 +16,7 @@ module AsyncModule
     interface MyCallback : ACS::OffShoot {
         oneway void working(in string data);
         oneway void done(in string data);        
-        AsyncModule::CallbackInfo get(in string data);        
+        AsyncModule::CallbackInfo get();        
 
     };
     

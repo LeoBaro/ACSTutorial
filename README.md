@@ -12,39 +12,55 @@ Clone this repository in the $HOME folder (/home/almamgr) of the ACS virtual mac
 ## Tutorials 
 
 ### Tutorial 1
-Goal: development of a simple component. C++ and Python implementations.
+**Goal**: development of a basic component.
+
+**Implementation**: c++, python.
 
 ### Tutorial 2
-Goal: development of two components "A" and "B": the component "A" calls a method of the "B" component. C++ and Python implementations.
+**Goal**: development of two components "A" and "B": the component "A" calls a method of the "B" component. 
+
+**Implementation**: c++, python.
 
 ### Tutorial 3
-Goal: development of a component "Console" communicating with a component "Telescope" and with a "Database" **simulated** component.
+**Goal**: development of a component "Console" communicating with a component "Telescope" and with a "Database" **simulated** component.
+
+**Implementation**: c++, xml.
+
 
 ### Tutorial 4
-Goal: development of user-definied complex types. 
+**Goal**: development of user-definied complex types. 
+
+**Implementation**: c++, python.
 
 ### Tutorial 5
-Goal: development of a component that can raise user-definied exceptions. Another component catches the exceptions.
+**Goal**: development of a component that can raise user-definied exceptions. Another component catches the exceptions.
+
+**Implementation**: c++, python.
 
 ### Tutorial 6
-Goal: compilation of an IDL module containing multiple interface definitions.
+**Goal**: compilation of an IDL module containing multiple interface definitions.
+
+**Implementation**: no implementation.
 
 ### Tutorial 7
-Goal: the README.md gives an overview of the different components types available in ACS
+**Goal**: the README.md gives an overview of the different components types available in ACS
+
+**Implementation**: no implementation.
 
 ### Tutorial 8
-Goal: development of two components "Supplier" and "Consumer": the "Supplier" component communicates with the "Consumer" component using the ACS' notification channel.  
+**Goal**: development of two components "Supplier" and "Consumer": the "Supplier" component communicates with the "Consumer" component using the ACS' notification channel.  
+
+**Implementation**: python
 
 
-## How to start the tutorials
-In order to test TUTORIAL_x's components, you need to:
-1. load the ACS environment and set the needed environment variable
-2. compile the components' code
-3. start the ACS framework    
-4. start the ACS containers
-5. acquire a reference of the desidered component and call its methods
+### Tutorial 9
+**Goal**: development of a custom Offshoot for reporting on asynchronous Call. 
 
-### Starting the tutorial using the ACS command center (reccomended way)
+**Implementation**: python
+
+## Start the tutorials
+
+### Start a tutorial using the ACS command center
 1. In order to activate the ACS environemnt, call the "load_env" script inside the TUTORIAL_x folder with:
 ```bash
 `. load_env.sh`
@@ -58,17 +74,22 @@ In order to test TUTORIAL_x's components, you need to:
 acscommandcenter
 ```
 The ACS framework can be started clicking on the “Start” green button. 
-4. The containers can be activated using the corresponding panel, writing the container's name and choosing its programming language. 
+4. The containers can be activated using the corresponding panel, writing the container's name and choosing its programming language (aragornContainer for python, bilboContainer for c++ and frodoContainer for java). 
 5. In order to acquire a reference of a component and call its methods, you can use the object explorer tool: you can find it clicking on the “Tools” tab.
 
 
-### Starting the tutorial using the terminal and ACS commands
+### Start a tutorial using the terminal and ACS commands
+
+DISCLAIMER: only TUTORIAL_9 has a "test" script.
+
 1. In order to activate the ACS environemnt, call the "load_env" script inside the TUTORIAL_x folder with:
 ```bash
 . load_env.sh
 ```
-2. The components' code must be compiled and installed: the instructions are written inside the TUTORIAL_x's README. 
-
+2. In order to compile and install the components' code, call the "make_all" script inside the TUTORIAL_x folder with:
+```bash
+`. make_all.sh`
+```
 3. The ACS framework can be started with:
 ```bash
 acsStart
@@ -79,15 +100,6 @@ acsStartContainer -cpp bilboContainer
 acsStartContainer -java frodoContainer
 acsStartContainer -py aragornContainer
 ```
- 5. In order to acquire a reference of a component and call its methods, you can:
- * call the python script inside the test/ folder:
- ```bash
- cd TUTORIAL_x
- python test/client.py
- ```
- * **OR** start the *object explorer tool* with:
- ```bash
- objexp
- ```
+ 5. In order to acquire a component's reference to call its methods, you can use the ACS' PySimpleClient interface as shown [here](TUTORIAL_9/WORKSPACE/async_py_impl/test/testOnewayWithoutCallback.py)
 
 

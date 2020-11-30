@@ -13,4 +13,13 @@
       />
 
 
+      <e Name="ASYNC_CALLER_PY"
+      Code="ASYNC_IMPL_MODULE.AsyncExampleCallerImpl"
+      Type="IDL:acsws/AsyncModule/AsyncExampleCaller:1.0"
+      Container="aragornContainer"
+      ImplLang="py"
+      Autostart="true"
+      />
+
+
 </Components>

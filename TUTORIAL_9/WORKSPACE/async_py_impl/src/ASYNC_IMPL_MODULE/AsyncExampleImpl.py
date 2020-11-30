@@ -18,7 +18,7 @@ class AsyncExampleImpl(AsyncModule__POA.AsyncExample, ACSComponent, ContainerSer
 
     def delayResultWithOutCallback(self, sleepSec):
 
-        self._logger.logInfo("[AsynExampleImpl - delayResultWithOutCallback] start!")
+        self._logger.logInfo("[AsynExampleImpl - delayResultWithOutCallback] start! Sleeping for %d seconds"%(sleepSec))
         
         sleep(sleepSec)
         
@@ -29,12 +29,14 @@ class AsyncExampleImpl(AsyncModule__POA.AsyncExample, ACSComponent, ContainerSer
         
         self._logger.logInfo("[AsynExampleImpl - delayResult] start!")
 
-        stringCallback.working("DATA")
+        stringCallback.working("DATA 1")
 
         sleep(sleepSec)
 
-        stringCallback.done("DATA")
-
         self._logger.logInfo("[AsynExampleImpl - delayResult] almost finished, setting the callback!")
+
+        sleep(1)
+
+        stringCallback.done("DATA 2")
 
         self._logger.logInfo("[AsynExampleImpl - delayResult] finish!")

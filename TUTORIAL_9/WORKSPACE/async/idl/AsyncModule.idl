@@ -24,5 +24,10 @@ module AsyncModule
         oneway void delayResultWithOutCallback(in long sleepSec);
         oneway void delayResult(in long sleepSec, in AsyncModule::MyCallback cb);
     };
+
+    interface AsyncExampleCaller : ACS::ACSComponent {
+        void callOneWay();
+    };
+
 };
 #endif

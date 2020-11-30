@@ -25,7 +25,11 @@ class AsyncExampleCallerImpl(AsyncModule__POA.AsyncExampleCaller, ACSComponent, 
 
         cb = MyCallbackImpl()
 
-        cbObj = self.activateOffShoot(cb)
+        from Acspy.Clients.SimpleClient import PySimpleClient
+        client = PySimpleClient()
+        cbObj = client.activateOffShoot(cb)
+        
+        #cbObj = self.activateOffShoot(cb)
 
         self._logger.logInfo("[AsyncExampleCallerImpl - callOneWay] before calling delayResult")
         cbData = cb.get()
@@ -51,3 +55,5 @@ class AsyncExampleCallerImpl(AsyncModule__POA.AsyncExampleCaller, ACSComponent, 
 
 
         self.releaseComponent(asyncComp.name)
+
+        client.disconnect()

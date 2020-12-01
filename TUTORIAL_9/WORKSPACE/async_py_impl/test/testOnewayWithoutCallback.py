@@ -6,7 +6,7 @@ comp = client.getComponent('ASYNC_PY')
 
 print("before calling delayResult")
 
-comp.delayResult(3)
+comp.delayResultWithOutCallback(3)
 
 print("client: right after delayResult")
 

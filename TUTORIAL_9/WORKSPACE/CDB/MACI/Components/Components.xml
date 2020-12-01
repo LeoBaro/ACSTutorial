@@ -7,7 +7,16 @@
       <e Name="ASYNC_PY"
       Code="ASYNC_IMPL_MODULE.AsyncExampleImpl"
       Type="IDL:acsws/AsyncModule/AsyncExample:1.0"
-      Container="aragornContainer"
+      Container="aragornContainer2"
+      ImplLang="py"
+      Autostart="true"
+      />
+
+
+      <e Name="ASYNC_CALLER_PY"
+      Code="ASYNC_IMPL_MODULE.AsyncExampleCallerImpl"
+      Type="IDL:acsws/AsyncModule/AsyncExampleCaller:1.0"
+      Container="aragornContainer1"
       ImplLang="py"
       Autostart="true"
       />

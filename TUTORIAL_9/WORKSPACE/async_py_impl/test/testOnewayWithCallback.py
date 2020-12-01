@@ -1,3 +1,4 @@
+
 from time import sleep
 
 from Acspy.Clients.SimpleClient import PySimpleClient
@@ -23,7 +24,7 @@ sleep(1)
 print("client: 1 sec after delayResult")
 print("cb.get", cb.get())
 
-sleep(3)
+sleep(7)
 
 print("client: after 7 sec sleep ")
 print("cb.get", cb.get())

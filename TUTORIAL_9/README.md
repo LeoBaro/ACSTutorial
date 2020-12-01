@@ -6,7 +6,8 @@ Languages:
 
 ```bash
 cd TUTORIAL_9
-. load_env.sh
+source load_env.sh
+source make_all.sh
 ```
 
 ## Asynchronous methods
@@ -16,7 +17,7 @@ First of all, let's try out a 'oneway' method.
 * The AsyncModule (defined [here](WORKSPACE/async/idl/AsyncModule.idl)) contains the AsyncExample interface that defines a 'oneway' method called: delayResultWithOutCallback(..). 
 * In order to use the 'oneway' keyword, you need to include <acscommon.idl> and link the acscommonStubs lib in the [Makefile](WORKSPACE/async/src/Makefile)
 * The python implementation is straightforward, you can find it within the AsyncExampleImpl class, defined [here](WORKSPACE/async_py_impl/src/ASYNC_IMPL_MODULE/AsyncExampleImpl.py).  
-* You can try it out calling [this script](WORKSPACE/async_py_impl/test/testOnewayWithoutCallback.py).
+* You can try it out calling [this script](WORKSPACE/async_py_impl/test/testOnewayWithoutCallback.py) (you need to start acs first and also start the corresponding containers (defined [here](WORKSPACE/CDB/Components/Components.xml)))
 
 
 ## Reporting on asynchronous methods
@@ -40,18 +41,21 @@ ACS adds callbacks functionality with two types of classes:
 Since the OffShoot base interface is actually empty, we need to implement it. 
 * The AsyncModule (defined [here](WORKSPACE/async/idl/AsyncModule.idl)) defines an interface called MyCallback, that implements ACS::OffShoot. 
 * The MyCallback interface can define any methods you like. 
-* You can find [here](WORKSPACE/callback_py_impl/src/CALLBACK_IMPL_MODULE/CallbackImpl.py) the implementation of the MyCallback interface: the MyCallBack object mantains a state composed by a *status* field (that is changed by the constructor, the working() and the done() methods ) and a *data* value (that is used for communication purposes between async call invocations). The get() method of the interface returns a tuple containing the status and the data fields. 
+* You can find [here](WORKSPACE/callback_py_impl/src/CALLBACKS_IMPL_MODULE/MyCallbackImpl.py) the implementation of the MyCallback interface: the MyCallBack object mantains a state composed by a *status* field (that is changed by the constructor, the working() and the done() methods ) and a *data* value (that is used for communication purposes between async call invocations). The get() method of the interface returns a tuple containing the status and the data fields. 
 
 Now we need to create a 'oneway' method that accepts a callback as an input argument.
 * The AsyncModule (defined [here](WORKSPACE/async/idl/AsyncModule.idl)) contains the AsyncExample interface that defines a 'oneway' method called: delayResultWithCallback(..). 
 * As before, you can find the python implementation within the AsyncExampleImpl class, defined [here](WORKSPACE/async_py_impl/src/ASYNC_IMPL_MODULE/AsyncExampleImpl.py).
-* You can try it out calling [this script](WORKSPACE/async_py_impl/test/testOnewayWithCallback.py).
-
-## Reporting on asynchronous methods with Callbacks
--> TODO <-
+* You can try it out calling [this script](WORKSPACE/async_py_impl/test/testOnewayWithCallback.py) (you need to start acs first and also start the corresponding containers (defined [here](WORKSPACE/CDB/Components/Components.xml))).
 
 
+## Issue to be aware of
 
+Python oneway methods are not working when both the caller and callee are on the same container.
+
+See [ticket](https://ictjira.alma.cl/browse/ACS-6).
+
+* You can try it out calling [this script](WORKSPACE/async_py_impl/test/testOnewayWithCallbackFromComponent.py) (you need to start acs first and also start the corresponding containers (defined [here](WORKSPACE/CDB/Components/Components.xml)))
 
 
 

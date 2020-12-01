@@ -35,7 +35,7 @@ class AsyncExampleCallerImpl(AsyncModule__POA.AsyncExampleCaller, ACSComponent, 
         cbData = cb.get()
         self._logger.logInfo("cb.get: %s %s"%(cbData.status, cbData.data))
         
-        asyncComp.delayResult(10, cbObj)
+        asyncComp.delayResult(6, cbObj)
 
         self._logger.logInfo("[AsyncExampleCallerImpl - callOneWay] right after calling delayResult")
         cbData = cb.get()
@@ -47,9 +47,9 @@ class AsyncExampleCallerImpl(AsyncModule__POA.AsyncExampleCaller, ACSComponent, 
         cbData = cb.get()
         self._logger.logInfo("[AsyncExampleCallerImpl - callOneWay] cb.get: %s %s"%(cbData.status, cbData.data))
 
-        sleep(3)
+        sleep(8)
 
-        self._logger.logInfo("[AsyncExampleCallerImpl - callOneWay] after 3 sec sleep ")
+        self._logger.logInfo("[AsyncExampleCallerImpl - callOneWay] after 8 sec sleep ")
         cbData = cb.get()
         self._logger.logInfo("[AsyncExampleCallerImpl - callOneWay] cb.get: %s %s"%(cbData.status, cbData.data))
 

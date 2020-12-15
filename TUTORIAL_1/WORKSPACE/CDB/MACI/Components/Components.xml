@@ -9,6 +9,11 @@
      Type="IDL:acsws/acstutorial/HelloComponent:1.0"
      Container="bilboContainer"
      ImplLang="cpp"/>
+  <e Name="JAVA_HELLO_COMP"
+     Code="acsws.acstutorial.HelloComponentImpl.HelloComponentComponentHelper"
+     Type="IDL:acsws/acstutorial/HelloComponent:1.0"
+     Container="frodoContainer"
+     ImplLang="java"/>
   <e Name="PY_HELLO_COMP"
      Code="acstut.HelloComponentImpl"
      Type="IDL:acsws/acstutorial/HelloComponent:1.0"

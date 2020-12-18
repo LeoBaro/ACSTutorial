@@ -15,5 +15,7 @@ public class HelloComponentImpl extends ComponentImplBase implements HelloCompon
     public String printHello() {
         System.out.println("Hello World!");
         return new String("Hello World!");
+
+
     }
 }

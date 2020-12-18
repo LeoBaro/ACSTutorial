@@ -17,12 +17,12 @@ Clone this repository in the $HOME folder (/home/almamgr) of the ACS virtual mac
 ### Tutorial 1
 **Goal**: development of a basic component.
 
-**Implementation**: c++, python.
+**Implementation**: c++, python, java.
 
 ### Tutorial 2
 **Goal**: development of two components "A" and "B": the component "A" calls a method of the "B" component. 
 
-**Implementation**: c++, python.
+**Implementation**: c++, python, java.
 
 ### Tutorial 3
 **Goal**: development of a component "Console" communicating with a component "Telescope" and with a "Database" **simulated** component.

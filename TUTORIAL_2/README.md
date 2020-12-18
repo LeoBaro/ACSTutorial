@@ -53,6 +53,28 @@ TelescopeImpl_LIBS    = TelescopeStubs acscomponent
 cd src/
 make clean all install
 ```
+### JAVA implementation
+```bash
+cd WORKSPACE
+getTemplateForDirectory MODROOT_WS jTelescope
+cd jTelescope
+mkdir -p src/<pragma-prefix>/<idl-module-name>/TelescopeImpl/
+cp ../../idlTelescope/src/<pragma-prefix>/<idl-module-name>/TelescopeImpl/TelescopeComponentHelper.java.tpl <pragma-prefix>/<idl-module-name>/TelescopeImpl/TelescopeComponentHelper.java
+touch src/<pragma-prefix>/<idl-module-name>/TelescopeImpl/TelescopeImpl.java
+```
+**Makefile:**
+```makefile
+...
+JARFILES = TelescopeImpl
+TelescopeImpl_DIRS = <pragma-prefix>
+...
+```
+**Compilation:**
+```bash
+cd src/
+make clean all install
+```
+
 ### Python implementation
 ```bash
 cd WORKSPACE
@@ -147,6 +169,28 @@ Since we are including the Telescope client implementation we need to link the c
 cd src/
 make clean all install
 ```
+### JAVA implementation
+```bash
+cd WORKSPACE
+getTemplateForDirectory MODROOT_WS jConsole
+cd jConsole
+mkdir -p src/<pragma-prefix>/<idl-module-name>/ConsoleImpl/
+cp ../../idlConsole/src/<pragma-prefix>/<idl-module-name>/ConsoleImpl/ConsoleComponentHelper.java.tpl <pragma-prefix>/<idl-module-name>/ConsoleImpl/ConsoleComponentHelper.java
+touch src/<pragma-prefix>/<idl-module-name>/ConsoleImpl/ConsoleImpl.java
+```
+**Makefile:**
+```makefile
+...
+JARFILES = ConsoleImpl
+ConsoleImpl_DIRS = <pragma-prefix>
+...
+```
+**Compilation:**
+```bash
+cd src/
+make clean all install
+```
+
 ### Python implementation
 ```bash
 cd WORKSPACE
@@ -188,6 +232,18 @@ CDB/MACI/Components/Components.xml
      Type="IDL:acsws/acstutorial/Telescope:1.0"
      Container="bilboContainer"
      ImplLang="cpp"/>
+
+   <e Name="J_TELESCOPE"
+      Code="acsws.acstutorial.TelescopeImpl.TelescopeComponentHelper"
+      Type="IDL:acsws/acstutorial/Telescope:1.0"
+      Container="frodoContainer"
+      ImplLang="java"/>
+
+   <e Name="J_CONSOLE"
+      Code="acsws.acstutorial.ConsoleImpl.ConsoleComponentHelper"
+      Type="IDL:acsws/acstutorial/Console:1.0"
+      Container="frodoContainer"
+      ImplLang="java"/>
 
   <e Name="PY_TELESCOPE"
      Code="acstut.TelescopeImpl"

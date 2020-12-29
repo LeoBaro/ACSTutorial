@@ -11,9 +11,9 @@ if [ ! -d $ACSROOT ]; then
 
    else
 
-      TUTORIAL_NAME=$1
-
       source $ACSROOT/config/.acs/.bash_profile.acs
+
+      TUTORIAL_NAME=$1
 
       INTROOT="/home/almamgr/INTROOT_$TUTORIAL_NAME"
 
@@ -27,7 +27,10 @@ if [ ! -d $ACSROOT ]; then
 
       export INTROOT="$INTROOT"
       source $ACSROOT/config/.acs/.bash_profile.acs
-      export ACS_CDB="/home/almamgr/ACSTutorial/$TUTORIAL_NAME/WORKSPACE"
+
+      DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+
+      export ACS_CDB="$DIR/../$TUTORIAL_NAME/WORKSPACE"
 
       echo "
            ___
@@ -35,9 +38,9 @@ if [ ! -d $ACSROOT ]; then
     / \    | |
    |--o|===|-|
    |---|   | |   Environment loaded:
-  /     \  | |       INTROOT is $INTROOT
- | A     | | |       ACS_CDB is $ACS_CDB
- | C     |=| |
+  /     \  | |           ACS is $ACSROOT
+ | A     | | |       INTROOT is $INTROOT
+ | C     |=| |       ACS_CDB is $ACS_CDB
  | S     | | |
  |_______| |_|
   |@| |@|  | |

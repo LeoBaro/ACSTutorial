@@ -6,25 +6,30 @@ if [ $# -eq 0 ]
     exit 1
 fi
 
-TUTORIAL_NAME=$1
+if [ ! -d $ACSROOT ]; then
+   printf "\n\$ACSROOT is not defined!"
 
-source /alma/ACS-2020JUN/ACSSW/config/.acs/.bash_profile.acs
+   else
 
-INTROOT="/home/almamgr/INTROOT_$TUTORIAL_NAME"
+      TUTORIAL_NAME=$1
 
-if [ ! -d $INTROOT ]; then
-   mkdir $INTROOT
-fi
+      source $ACSROOT/config/.acs/.bash_profile.acs
 
-if [ -z "$(ls -A $INTROOT)" ]; then
-   getTemplateForDirectory INTROOT $INTROOT
-fi
+      INTROOT="/home/almamgr/INTROOT_$TUTORIAL_NAME"
 
-export INTROOT="$INTROOT"
-source /alma/ACS-2020JUN/ACSSW/config/.acs/.bash_profile.acs
-export ACS_CDB="/home/almamgr/ACSTutorial/$TUTORIAL_NAME/WORKSPACE"
+      if [ ! -d $INTROOT ]; then
+         mkdir $INTROOT
+      fi
 
-echo "
+      if [ -z "$(ls -A $INTROOT)" ]; then
+         getTemplateForDirectory INTROOT $INTROOT
+      fi
+
+      export INTROOT="$INTROOT"
+      source $ACSROOT/config/.acs/.bash_profile.acs
+      export ACS_CDB="/home/almamgr/ACSTutorial/$TUTORIAL_NAME/WORKSPACE"
+
+      echo "
            ___
      |     | |
     / \    | |
@@ -38,4 +43,8 @@ echo "
   |@| |@|  | |
 ___________|_|_
 "
+
+
+
+fi
 

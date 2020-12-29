@@ -1,16 +1,10 @@
 # ACSTutorial
 
-The goal of this repository is to provide some very basic usage examples of the ACS framework. This repository contains several tutorials, each tutorial has the corresponding folder. Inside each folder there are the following elements:
-
-* load_env.sh: a script that initialize the environment. It creates an integration area (INTROOT) folder and set the needed environment variables.
-* make_all.sh: a script that call all the Makefiles to compile and install the code in the corresponding INTROOT area.
-* WORKSPACE: a folder that contains the components and the CDB configuration.
+The goal of this repository is to provide some very basic usage examples of the ACS framework. This repository contains several tutorials: each tutorial's folder contains:
+* load_env.sh: a script that initialize the tutorial's environment. It creates the integration area (INTROOT) folder and initializes acs. 
+* make_all.sh: a script to compile and install the tutorial's code.
+* WORKSPACE: a folder that contains the components' code and the CDB configuration.
 * README.md: a README explaining the tutorial.
-
-
-
-## Installation
-Clone this repository in the $HOME folder (/home/almamgr) of the ACS virtual machine.
 
 ## Tutorials summary
 
@@ -66,11 +60,11 @@ Clone this repository in the $HOME folder (/home/almamgr) of the ACS virtual mac
 ### How to start a tutorial using the ACS command center
 1. In order to activate the ACS environemnt, call the "load_env" script inside the TUTORIAL_x folder with:
 ```bash
-`. load_env.sh`
+`source load_env.sh`
 ```
 2. In order to compile and install the components' code, call the "make_all" script inside the TUTORIAL_x folder with:
 ```bash
-`. make_all.sh`
+`source make_all.sh`
 ```
 3. The ACS Command Center GUI can be started with:
 ```bash
@@ -91,7 +85,7 @@ DISCLAIMER: only TUTORIAL_9 has a "test" script.
 ```
 2. In order to compile and install the components' code, call the "make_all" script inside the TUTORIAL_x folder with:
 ```bash
-`. make_all.sh`
+`source make_all.sh`
 ```
 3. The ACS framework can be started with:
 ```bash

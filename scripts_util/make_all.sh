@@ -25,8 +25,9 @@ TO_COMPILE=$2
 echo "TUTORIAL_NAME: $TUTORIAL_NAME"
 echo "TO_COMPILE: $TO_COMPILE"
 
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
-BASE="/home/almamgr/ACSTutorial/$TUTORIAL_NAME/WORKSPACE"
+BASE="$DIR/../$TUTORIAL_NAME/WORKSPACE"
 
 #i=0
 for FOLDER in $TO_COMPILE

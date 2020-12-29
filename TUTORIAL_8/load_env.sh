@@ -2,4 +2,6 @@
 
 TUTORIAL_NAME=TUTORIAL_8
 
-source /home/almamgr/ACSTutorial/scripts_util/load_env.sh "$TUTORIAL_NAME"
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+
+source $DIR/../scripts_util/load_env.sh "$TUTORIAL_NAME"

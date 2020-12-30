@@ -15,7 +15,9 @@ if [ ! -d $ACSROOT ]; then
 
       TUTORIAL_NAME=$1
 
-      INTROOT="/home/almamgr/INTROOT_$TUTORIAL_NAME"
+      mkdir -p "/home/almamgr/acs-tutorials"
+
+      INTROOT="/home/almamgr/acs-tutorials/INTROOT_$TUTORIAL_NAME"
 
       if [ ! -d $INTROOT ]; then
          mkdir $INTROOT

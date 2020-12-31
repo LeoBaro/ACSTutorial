@@ -15,6 +15,11 @@
      Type="IDL:acsws/acstutorial/HelloComponent:1.0"
      Container="aragornContainer"
      ImplLang="py"/>
- 
+
+   <e Name="JAVA_HELLO_COMP"
+     Code="acsws.acstutorial.HelloComponentImpl.HelloComponentComponentHelper"
+     Type="IDL:acsws/acstutorial/HelloComponent:1.0"
+     Container="frodoContainer"
+     ImplLang="java"/>
  
 </Components>

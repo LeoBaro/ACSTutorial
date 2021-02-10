@@ -92,7 +92,43 @@ cd src/
 make clean all install
 ```
 
+### JAVA implementation:
+In order to throw FooNotFoundEx exception you need to import its wrapper located inside the jar file and call toNAME_EXCEPTION():
+
+
+First you need to use the real exception to throw in the signature:
+
+```java
+
+import acsws.FOOErr.wrappers.AcsJFooNotFoundEx;
+import acsws.FOOErr.FooNotFoundEx;
+
+....
+
+public void moveTo(float x, float y) throws FooNotFoundEx {
+
+}
+
+ ```
+ Then you can throw the exception calling the wrapper:
+
+ ```java
+
+ throw new AcsJFooNotFoundEx("Error Message").toFooNotFoundEx();
+
+```
+
+**Makefile:**
+```makefile
+...
+JARFILES = TelescopeImpl
+TelescopeImpl_DIRS = acsws
+...
+```
+
+
 ## Console Component
+### C++ implementation:
 We want to make able the Console component to catch the Telescope's exception. 
 * The IDL definition does not change
 * The "ConsoleImpl.h" must include "BARErr.h"
@@ -122,3 +158,31 @@ Then, as always:
 cd src/
 make clean all install
 ```
+
+### JAVA implementation:
+Handling FooNotFoundEx from telescope component is done simply using try catch statement, then for throwing a new exception you can use the previous instructions:
+```java
+
+import acsws.FOOErr.FooNotFoundEx;
+import acsws.BARErr.wrappers.AcsJBarNotFoundEx;
+import acsws.BARErr.BarNotFoundEx;
+....
+
+try {
+    ....
+}
+catch (FooNotFoundEx ex)
+{
+    throw new AcsJBarNotFoundEx("Error Message").toBarNotFoundEx();
+
+}
+
+ ```
+
+ **Makefile:**
+```makefile
+...
+JARFILES = ConsoleImpl
+TelescopeImpl_DIRS = acsws
+...
+

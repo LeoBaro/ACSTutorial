@@ -16,6 +16,18 @@
       Container="bilboContainer"
       ImplLang="cpp"/>  
 
+   <e Name="J_TELESCOPE"
+      Code="acsws.acstutorial.TelescopeImpl.TelescopeComponentHelper"
+      Type="IDL:acsws/acstutorial/Telescope:1.0"
+      Container="frodoContainer"
+      ImplLang="java"/>
+
+   <e Name="J_CONSOLE"
+      Code="acsws.acstutorial.ConsoleImpl.ConsoleComponentHelper"
+      Type="IDL:acsws/acstutorial/Console:1.0"
+      Container="frodoContainer"
+      ImplLang="java"/>
+
    <e Name="PY_TELESCOPE"
       Code="acstut.TelescopeImpl"
       Type="IDL:acsws/acstutorial/Telescope:1.0"

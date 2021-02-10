@@ -8,7 +8,7 @@
 #
 # who       when      what
 # --------  --------  ----------------------------------------------
-# almamgr  05/08/20  created
+# almamgr  10/02/21  created
 #
 
 # ALMA - Atacama Large Millimeter Array
@@ -133,14 +133,14 @@ CDB_SCHEMAS =
 # 
 # IDL Files and flags
 # 
-IDL_FILES = Console
-ConsoleStubs_LIBS = acscomponentStubs BARErr
+IDL_FILES =
 TAO_IDLFLAGS =
 USER_IDL =
 #
 # Jarfiles and their directories
 #
-JARFILES= 
+JARFILES= ConsoleImpl
+ConsoleImpl_DIRS = acsws
 jjj_DIRS=
 jjj_EXTRAS=
 # For expressing dependencies between jarfiles (parallel builds)
@@ -155,7 +155,7 @@ XML_IDL=
 #
 # Java Component Helper Classes generation on/off
 #
-COMPONENT_HELPERS=on
+COMPONENT_HELPERS=
 #
 # Java Entity Classes generation on/off
 #

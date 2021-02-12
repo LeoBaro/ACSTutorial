@@ -29,8 +29,8 @@ public class ConsoleImpl extends ComponentImplBase implements ConsoleOperations 
         }
         catch (FooNotFoundEx ex)
         {
-            m_logger.severe("Error while moving telescopes, are the coordinates greater than zero?");
-            throw new AcsJBarNotFoundEx("Error while moving telescopes, are the coordinates greater than zero?").toBarNotFoundEx();
+            m_logger.severe("Error while moving telescopes, are the coordinates >= 0?");
+            throw new AcsJBarNotFoundEx("Error while moving telescopes, are the coordinates >= 0?").toBarNotFoundEx();
         }
         
 

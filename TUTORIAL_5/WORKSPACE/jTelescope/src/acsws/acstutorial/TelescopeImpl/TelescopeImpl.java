@@ -20,8 +20,8 @@ public class TelescopeImpl extends ComponentImplBase implements TelescopeOperati
 
         if (x < 0 || y < 0)
         {   
-            m_logger.severe("ERROR: Positions must be greater than zero");
-            throw new AcsJFooNotFoundEx("ERROR Positions must be greater than zero").toFooNotFoundEx();
+            m_logger.severe("ERROR: Positions must be >= 0 ");
+            throw new AcsJFooNotFoundEx("ERROR Positions must be >= 0 ").toFooNotFoundEx();
         }
 
         this.x = x;

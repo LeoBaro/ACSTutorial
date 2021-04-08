@@ -114,9 +114,10 @@ Then, copy the component helper:
 cd src/<pragma-prefix>/<idl-module-name>/HelloComponentImpl
 cp ../../../../../idlHelloComp/src/<pragma-prefix>/<idl-module-name>/HelloComponentImpl/HelloComponentComponentHelper.java.tpl ./
 ```
-Finally, change the component helper extension from .java.tpl to .java:
+Finally, change the component helper extension from .java.tpl to .java and create a java file that implements the idl:
 ```bash
 cp HelloComponentComponentHelper.java.tpl HelloComponentComponentHelper.java
+touch HelloComponentImpl.java
 ```
 
 

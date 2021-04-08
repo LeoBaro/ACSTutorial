@@ -31,7 +31,7 @@ The goal of this repository is to provide some very basic usage examples of the 
 ### Tutorial 5
 **Goal**: development of a component that can raise user-definied exceptions. Another component catches the exceptions.
 
-**Implementation**: c++, python.
+**Implementation**: c++, python, java.
 
 ### Tutorial 6
 **Goal**: compilation of an IDL module containing multiple interface definitions.
